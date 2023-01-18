@@ -16,6 +16,7 @@ import com.google.mlkit.common.MlKitException;
 import com.google.mlkit.vision.common.InputImage;
 import com.google.mlkit.vision.text.Text;
 import com.google.mlkit.vision.text.TextRecognition;
+import com.google.mlkit.vision.text.TextRecognizerOptionsInterface;
 import com.google.mlkit.vision.text.TextRecognizer;
 
 import net.sf.scuba.data.Gender;
@@ -61,7 +62,7 @@ public class TextRecognitionProcessor {
     public TextRecognitionProcessor(DocType docType, ResultListener resultListener) {
         this.docType = docType;
         this.resultListener = resultListener;
-        textRecognizer = TextRecognition.getClient();
+        textRecognizer = TextRecognition.getClient(TextRecognizerOptionsInterface.LATIN);
     }
 
     //region ----- Exposed Methods -----
