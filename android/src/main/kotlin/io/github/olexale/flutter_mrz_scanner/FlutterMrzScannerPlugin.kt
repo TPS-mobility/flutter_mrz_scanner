@@ -109,9 +109,7 @@ class MRZScannerView internal constructor(context: Context, messenger: BinaryMes
     }
 
     override fun dispose() {
-        if (cameraSource != null) {
-            cameraSource.release()
-        }
+        cameraSource.release()
     }
 
     override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: MethodChannel.Result) {
