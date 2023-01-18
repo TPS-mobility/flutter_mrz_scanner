@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.view.View;
 
-import io.github.olexale.mlkit.camera.CameraSource;
+import io.github.olexale.flutter_mrz_scanner.mlkit.camera.CameraSource;
 
 import java.util.HashSet;
 import java.util.Set;
