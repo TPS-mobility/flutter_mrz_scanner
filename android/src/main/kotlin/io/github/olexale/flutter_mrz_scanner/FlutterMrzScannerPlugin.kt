@@ -99,7 +99,9 @@ class MRZScannerView internal constructor(context: Context, messenger: BinaryMes
         Log.d(TAG, mrzInfo!!.toString())
         Log.d(TAG, mrzInfo.dateOfExpiry)
         Log.d(TAG, mrzInfo.optionalData2)
-         mainExecutor.execute {
+        cameraSource.stop()
+        cameraSource.release()
+        mainExecutor.execute {
             methodChannel.invokeMethod("onParsed", mrzInfo!!.toString())
         }
     }
