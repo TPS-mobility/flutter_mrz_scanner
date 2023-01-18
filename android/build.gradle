@@ -51,15 +51,6 @@ android {
     }
 }
 
-configurations.all {
-    resolutionStrategy {
-        force 'com.google.android.gms:play-services-mlkit-text-recognition:+'
-        force 'com.google.android.gms:play-services-vision-common:+'
-        force 'com.google.android.gms:play-services-vision-face-contour-internal:+'
-        force 'com.google.firebase:firebase-ml-vision-face-model:+'
-    }
-}
-
 dependencies {
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.10'
     implementation 'cz.adaptech:tesseract4android:4.1.1'
