@@ -11,11 +11,6 @@ import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.StandardMessageCodec
 import io.flutter.plugin.platform.PlatformView
 import io.flutter.plugin.platform.PlatformViewFactory
-import io.fotoapparat.characteristic.LensPosition
-import io.fotoapparat.configuration.CameraConfiguration
-import io.fotoapparat.configuration.Configuration
-import io.fotoapparat.selector.LensPositionSelector
-import io.fotoapparat.selector.front
 
 import io.github.olexale.flutter_mrz_scanner.R
 import io.github.olexale.flutter_mrz_scanner.mlkit.camera.CameraSource
