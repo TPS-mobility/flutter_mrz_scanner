@@ -1,0 +1,12 @@
+<io.github.olexale.flutter_mrz_scanner.mlkit.camera.CameraSourcePreview
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/camera_source_preview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <io.github.olexale.flutter_mrz_scanner.mlkit.other.GraphicOverlay
+            android:id="@+id/graphics_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+</io.github.olexale.flutter_mrz_scanner.mlkit.camera.CameraSourcePreview>
