@@ -596,7 +596,7 @@ public class CameraSource {
          */
         @SuppressLint("Assert")
         void release() {
-            assert (processingThread.getState() == Thread.State.TERMINATED);
+            assert (processingThread == null || processingThread.getState() == Thread.State.TERMINATED);
         }
 
         /** Marks the runnable as active/not active. Signals any blocked threads to continue. */
