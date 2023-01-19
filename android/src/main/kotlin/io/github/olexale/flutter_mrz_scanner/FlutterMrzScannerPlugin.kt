@@ -62,8 +62,11 @@ class MRZScannerView internal constructor(context: Context, messenger: BinaryMes
     private var view: View? = null    
 
     override fun getView(): View {
-        view = LayoutInflater.from(context).inflate(R.layout.capture, null)
+        if (view != null) {
+            return view!!
+        }
 
+        view = LayoutInflater.from(context).inflate(R.layout.capture, null)
         preview = view!!.findViewById(R.id.camera_source_preview)
         if (preview == null) {
             Log.d(TAG, "Preview is null")
@@ -75,12 +78,13 @@ class MRZScannerView internal constructor(context: Context, messenger: BinaryMes
 
         createCameraSource()
         startCameraSource()
-
+        Log.e(TAG, "Init View Return")
         return view!!
     }
 
     init {
         methodChannel.setMethodCallHandler(this)
+        Log.e(TAG, "Init FLutterMrz")
     }
 
     private fun createCameraSource() {
@@ -99,9 +103,9 @@ class MRZScannerView internal constructor(context: Context, messenger: BinaryMes
         Log.d(TAG, mrzInfo!!.toString())
         Log.d(TAG, mrzInfo.dateOfExpiry)
         Log.d(TAG, mrzInfo.optionalData2)
-        cameraSource.stop()
-        cameraSource.release()
         mainExecutor.execute {
+            cameraSource.stop()
+            cameraSource.release()
             methodChannel.invokeMethod("onParsed", mrzInfo!!.toString())
         }
     }
@@ -121,6 +125,7 @@ class MRZScannerView internal constructor(context: Context, messenger: BinaryMes
             }
             "stop" -> {
                 result.success(null)
+                dispose()
             }
             "flashlightOn" -> {
                 result.success(null)

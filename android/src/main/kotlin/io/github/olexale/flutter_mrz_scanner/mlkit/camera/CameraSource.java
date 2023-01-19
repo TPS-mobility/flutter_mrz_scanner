@@ -515,7 +515,7 @@ public class CameraSource {
         }
 
         // This corresponds to the rotation constants.
-        this.rotation = angle;
+        this.rotation = 180;
 
         camera.setDisplayOrientation(displayAngle);
         parameters.setRotation(angle);
@@ -696,6 +696,7 @@ public class CameraSource {
                                         .setCameraFacing(facing)
                                         .build(),
                                 graphicOverlay);
+
                     }
                 } catch (Throwable t) {
                     Log.e(TAG, "Exception thrown from receiver.", t);

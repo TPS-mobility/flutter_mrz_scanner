@@ -65,7 +65,6 @@ class _CameraPageState extends State<CameraPage> {
               )));
     };
     controller.onError = (error) => print(error);
-
     controller.startPreview();
   }
 }

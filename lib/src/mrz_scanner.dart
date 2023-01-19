@@ -35,7 +35,9 @@ class MRZScanner extends StatelessWidget {
                 creationParamsCodec: const StandardMessageCodec(),
               )
             : Text('$defaultTargetPlatform is not supported by this plugin');
-    return withOverlay ? CameraOverlay(child: scanner) : scanner;
+    return defaultTargetPlatform == TargetPlatform.iOS
+        ? CameraOverlay(child: scanner)
+        : AndroidCameraOverlay(child: scanner);
   }
 
   void onPlatformViewCreated(int id) {
