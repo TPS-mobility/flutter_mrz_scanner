@@ -27,6 +27,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
+    namespace "io.github.olexale.flutter_mrz_scanner"
     compileSdkVersion 31
 
     compileOptions {
